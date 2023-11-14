@@ -1,0 +1,12 @@
+ <h1><%= @task.title %></h1>
+
+  <div>
+    <p><%= @task.details %></p>
+  </div>
+
+  <%= link_to "Edit this tasks", task_edit_path(@task), method: :patch %>
+  <%= link_to "Return to task list", tasks_path %>
+    <%= link_to task_destroy_path(@task),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+    <i class="fa-solid fa-trash"></i>
+  <% end %>
